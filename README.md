@@ -77,9 +77,8 @@ git clone https://github.com/YOURNAME/grimoire-void "$HOME/workstationdots/grimm
 bash "$HOME/workstationdots/grimmstation/install_scripts/install.sh"
 ```
 
-> The clone target folder stays `grimmstation` (the scripts resolve their own
-> paths, but the original layout expects that name). Only the GitHub repo is
-> named grimoire-void.
+> The clone target folder stays `grimmstation` (the original layout expects that
+> name). Only the GitHub repo is named grimoire-void.
 
 ## 7. The installer
 
@@ -130,10 +129,16 @@ windows · `Super`+`e` emoji · `Super`+`Shift`+`e` power.
 resize · `Super`+`a`/`Super`+`Shift`+`a` split · `Super`+`Shift`+`o` layout ·
 `Super`+`m` fullscreen · `Super`+`space` float · `Super`+`Shift`+`q` close.
 **Workspaces:** `Super`+`1..8` · `+Shift` send · `Super`+`Tab`/`Alt`+`Tab`.
-**Modes (trigger, then bare letter; `Escape` exits):** open `Super`+`o`
-(`p`/`m`/`b`/`a`/`w`) · swap `Super`+`Shift`+`s` (`h/j/k/l`) · scripts
-`Super`+`Shift`+`g` (`b`/`t`/`w`/`x`) · bookmarks `Super`+`Shift`+`w`
-(`m`/`Shift+m`/`n`/`c`) · notify `Super`+`Shift`+`m`.
+**Modes (trigger, then bare letter; `Escape` exits):**
+- **open app** `Super`+`o` → `p` PDF · `m` music · `b` bluetooth · `a` audio ·
+  `w` wallpapers
+- **scripts** `Super`+`Shift`+`s` → `b` waybar theme selector · `t` night light ·
+  `w` wallpaper picker · `x` run a script
+- **swap windows** `Super`+`Shift`+`u` → `h/j/k/l`
+- **bookmarks** `Super`+`Shift`+`w` → `m` tab · `Shift+m` private · `n` window ·
+  `c` category
+- **notify** `Super`+`Shift`+`m` → `m` restore · `Shift+m` dismiss all
+
 **Hardware:** brightness `Super`+`F4/F3`; volume `Super`+`F7/F6/F5`; media
 `Super`+`Shift`+arrows; `Print`/`Super`+`Print` screenshot.
 
@@ -141,9 +146,10 @@ resize · `Super`+`a`/`Super`+`Shift`+`a` split · `Super`+`Shift`+`o` layout ·
 
 Open any app → `Super`+`d`, type, Enter. Side by side → open one,
 `Super`+`Shift`+`a`, open the second. Emoji → `Super`+`e` (search by name).
-Screenshot+annotate → `Super`+`Print`. Wallpaper → drop into
-`~/Pictures/backgrounds`, `Super`+`Shift`+`g` `w`. Lock/power →
-`Super`+`Shift`+`x` / `Super`+`Shift`+`e`.
+Screenshot+annotate → `Super`+`Print`. Switch waybar theme → `Super`+`Shift`+`s`
+then `b`. Pick a wallpaper → drop into `~/Pictures/backgrounds`, then
+`Super`+`Shift`+`s` then `w`. Lock/power → `Super`+`Shift`+`x` /
+`Super`+`Shift`+`e`.
 
 ## 13. Software
 
@@ -270,8 +276,8 @@ LAUNCH   Super+Return terminal   Super+d launcher   Super+b browser
 WINDOWS  Super+h/j/k/l focus   +Shift move   +Ctrl resize
          Super+m fullscreen    Super+space float   Super+Shift+q close
 WORKSPC  Super+1..8 switch     Super+Shift+1..8 send
-MODES    Super+o open  Super+Shift+g scripts  Super+Shift+w bookmarks
-         Super+Shift+s swap  Super+Shift+m notify
+MODES    Super+o open        Super+Shift+s scripts (b=waybar theme)
+         Super+Shift+u swap  Super+Shift+w bookmarks  Super+Shift+m notify
 AUDIO    Super+F7/F6/F5 volume (wpctl)   Super+F4/F3 brightness
 SYSTEM   Super+Shift+x lock   Print/Super+Print screenshot
          Super+Shift+r reload sway
@@ -282,7 +288,7 @@ SERVICE  sudo sv status NAME   sudo ln -s /etc/sv/NAME /var/service/
 ## 26. Credits
 
 Dotfiles and Sway design by **bibjaw99** (grimmstation). Void port
-(grimoire-void) and install tooling adapted for the Dell Latitude 5490. Keymap
-retuned for one-chord ergonomics; audio via wpctl; full-Unicode emoji picker;
-elogind session + keyring wired into greetd PAM; launcher variables and waybar
-module cleanly named.
+(grimoire-void) and install tooling adapted for the Dell Latitude 5490. Everyday
+actions promoted to one-chord binds; grouped mode triggers kept faithful to the
+original (scripts on Shift+s, swap on Shift+u). Audio via wpctl; full-Unicode
+emoji picker; elogind session + keyring in greetd PAM.
