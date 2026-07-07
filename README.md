@@ -8,7 +8,8 @@
 > freshly installed machine into this entire environment.
 >
 > **Built for:** Dell Latitude 5490 · i5-8250U · Intel UHD 620 · 16 GB · UEFI · ext4
-> **Flavour:** Void glibc + runit · **Theme:** gruvbox material
+> **Flavour:** Void glibc + runit
+> **Theme:** gruvbox material
 
 ---
 
