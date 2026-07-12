@@ -1,0 +1,16 @@
+sway
+swaybg
+Waybar
+mako
+swayidle
+swaylock
+grim
+slurp
+swappy
+wl-clipboard
+wtype
+wlsunset
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+xorg-server-xwayland
