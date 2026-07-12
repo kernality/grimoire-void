@@ -30,8 +30,8 @@
   ],
 
   "custom/launcher": {
-    "format": "<span></span>",
-    "on-click": "wofi --show drun",
+    "format": "<span></span>",
+    "on-click": "pkill -x wofi || wofi --show drun --allow-images --insensitive",
     "on-click-right": "~/.config/custom_scripts/power.sh",
     "escape": true,
     "tooltip": false
