@@ -1,9 +1,0 @@
-dev.vencord.Vesktop
-org.libreoffice.LibreOffice
-org.gimp.GIMP
-org.localsend.localsend_app
-org.qbittorrent.qBittorrent
-com.jgraph.drawio.desktop
-org.pgadmin.pgadmin4
-com.github.d4nj1.tlpui
-com.github.tchx84.Flatseal
