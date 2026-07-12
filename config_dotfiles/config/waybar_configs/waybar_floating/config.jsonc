@@ -6,7 +6,7 @@
   "margin-right": 5,
   "margin-left": 5,
   "modules-left": [
-    "custom/rofi",
+    "custom/launcher",
     "sway/workspaces",
     "sway/window",
     "tray",
@@ -25,9 +25,9 @@
     "pulseaudio",
     "battery"
   ],
-  "custom/rofi": {
-    "format": "<span ></span>",
-    "on-click": "rofi -show drun -disable-history -show-icons -theme-str 'window { width: 22% ; location: northwest; margin: 10px 0 0 10px; } listview { lines: 20; }'",
+  "custom/launcher": {
+    "format": "<span color='#83a598'></span>",
+    "on-click": "pkill wofi || wofi --show drun --allow-images --insensitive",
     "on-click-right": "~/.config/custom_scripts/power.sh",
     "escape": true,
     "tooltip": false
@@ -164,7 +164,6 @@
     }
   },
   "clock": {
-    // "timezone": "America/New_York",
     "format": "<span color='#202020' bgcolor='#8ec07c' >  </span> {:%a %d | %H:%M}",
     "tooltip": false,
     "interval": 1
