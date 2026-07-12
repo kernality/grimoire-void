@@ -14,7 +14,7 @@
 ### workflow
 ![Sway](https://codeberg.org/bibjaw99/grimmstation-misc/raw/branch/main/screenshots/sway.png)
 ### waybar themes
-- to launch the rofi theme selector, press `Super+Shift+s` then `b`
+- to launch the wofi theme selector, press `Super+Shift+s` then `b`
 ![waybar themes](https://codeberg.org/bibjaw99/grimmstation-misc/raw/branch/main/screenshots/waybarSwitching.gif)
 ---
 ## At a glance
