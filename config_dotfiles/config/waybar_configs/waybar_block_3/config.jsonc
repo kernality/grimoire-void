@@ -155,7 +155,6 @@
     }
   },
   "clock": {
-    // "timezone": "Asia/Kolkata",
     "format": "<span color='#8ec07c' >  </span>{:%a %d | %H:%M}",
     "tooltip": false,
     "interval": 1
