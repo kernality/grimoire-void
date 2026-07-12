@@ -1,0 +1,16 @@
+foot
+wofi
+mate-polkit
+pcmanfm
+xarchiver
+7zip
+tumbler
+ffmpegthumbnailer
+firefox
+zathura
+zathura-pdf-poppler
+ristretto
+mpv
+pavucontrol
+greetd
+tuigreet
