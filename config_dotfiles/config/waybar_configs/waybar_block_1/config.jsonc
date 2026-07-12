@@ -5,16 +5,19 @@
   "margin-top": 5,
   "margin-left": 5,
   "margin-right": 5,
+
   "modules-left": [
-    "custom/rofi",
+    "custom/launcher",
     "sway/workspaces",
     "sway/window",
     "tray",
     "sway/mode"
   ],
+
   "modules-center": [
     "clock"
   ],
+
   "modules-right": [
     "network",
     "disk",
@@ -25,14 +28,15 @@
     "pulseaudio",
     "battery"
   ],
-  "custom/rofi": {
-    "format": "<span ></span>",
-    "on-click": "rofi -show drun -disable-history -show-icons -theme-str 'window { width: 22% ; location: northwest; margin: 10px 0 0 10px; } listview { lines: 20; }'",
+
+  "custom/launcher": {
+    "format": "<span></span>",
+    "on-click": "wofi --show drun",
     "on-click-right": "~/.config/custom_scripts/power.sh",
     "escape": true,
     "tooltip": false
   },
-  // Modules configuration
+
   "sway/workspaces": {
     "disable-scroll": true,
     "active-only": false,
@@ -50,29 +54,53 @@
       "8": "<span>󰚀</span>"
     }
   },
+
   "sway/window": {
-    "format": "<span color='#202020' bgcolor='#d3869b' > 󰣆 </span> {app_id}",
+    "format": "<span color='#202020' bgcolor='#d3869b'> 󰣆 </span> {app_id}",
     "separate-outputs": true,
     "tooltip": false
   },
+
   "sway/mode": {
     "format": " {}",
     "max-length": 50
   },
+
   "tray": {
     "icon-size": 14,
     "spacing": 8
   },
+
+  "network": {
+    "interval": 2,
+    "format": "<span color='#202020' bgcolor='#d3869b'> 󱘖 </span> {bandwidthDownBits}",
+    "format-wifi": "<span color='#202020' bgcolor='#d3869b'> {icon} </span> {bandwidthDownBits}",
+    "format-ethernet": "<span color='#202020' bgcolor='#d3869b'> 󰈀 </span> {bandwidthDownBits}",
+    "format-icons": [
+      "󰤫",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip": false,
+    "states": {
+      "normal": 25
+    }
+  },
+
   "disk": {
-    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {free}",
+    "format": "<span color='#202020' bgcolor='#ea6962'>  </span> {free}",
     "interval": 20
   },
+
   "cpu": {
-    "format": "<span color='#202020' bgcolor='#e78a4e' >  </span> {usage}%",
+    "format": "<span color='#202020' bgcolor='#e78a4e'>  </span> {usage}%",
     "tooltip": false,
     "interval": 1,
     "on-click-right": "~/.config/custom_scripts/launch_tui.sh btop"
   },
+
   "custom/cpu_temp": {
     "exec": "~/.config/waybar/scripts/waybarTemp.sh",
     "return-type": "json",
@@ -80,33 +108,37 @@
     "format": "{}",
     "tooltip": false
   },
+
   "backlight": {
-    // "device": "acpi_video1",
-    "format": "<span color='#202020' bgcolor='#f6c657' > 󰞏 </span> {percent}%",
+    "format": "<span color='#202020' bgcolor='#f6c657'> 󰞏 </span> {percent}%",
     "tooltip": false,
     "on-click-right": "~/.config/custom_scripts/wlsunset.sh"
   },
+
   "custom/memory": {
     "exec": "~/.config/waybar/scripts/memory_usage.sh",
     "interval": 2,
     "return-type": "json",
-    "format": "<span color='#202020' bgcolor='#458588' >  </span> {}"
+    "format": "<span color='#202020' bgcolor='#458588'>  </span> {}"
   },
+
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "<span color='#202020' bgcolor='#83a598' >  </span> {volume}%",
-    "format-muted": "<span color='#202020' bgcolor='#ea6962' >  </span> {volume}%",
-    "format-bluetooth": "<span color='#202020' bgcolor='#83a598' > 󰂰 </span> {volume}%",
-    "format-bluetooth-muted": "<span color='#202020' bgcolor='#ea6962' > 󰂲 </span> {volume}%",
+    "format": "<span color='#202020' bgcolor='#83a598'>  </span> {volume}%",
+    "format-muted": "<span color='#202020' bgcolor='#ea6962'>  </span> {volume}%",
+    "format-bluetooth": "<span color='#202020' bgcolor='#83a598'> 󰂰 </span> {volume}%",
+    "format-bluetooth-muted": "<span color='#202020' bgcolor='#ea6962'> 󰂲 </span> {volume}%",
     "format-source": "{volume}% ",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "~/.config/custom_scripts/launch_tui.sh wiremix",
     "tooltip": false,
     "max-volume": 130
   },
+
   "battery#bat2": {
     "bat": "BAT2"
   },
+
   "battery": {
     "interval": 1,
     "states": {
@@ -126,37 +158,20 @@
       "󰂂",
       "󰁹"
     ],
-    "format": "<span color='#202020' bgcolor='#689d6a' > {icon} </span> {capacity}%",
-    "format-critical": "<span color='#202020' bgcolor='#cc241d' > {icon} </span> {capacity}%!!",
-    "format-warning": "<span color='#202020' bgcolor='#e78a4e' > {icon} </span> {capacity}%",
-    "format-full": "<span color='#202020' bgcolor='#689d6a' > {icon} </span> {capacity}%",
-    "format-charging": "<span color='#202020' bgcolor='#689d6a' > 󰂅 </span> {capacity}%",
-    "format-charging-warning": "<span color='#202020' bgcolor='#e78a4e' > 󰢝 </span> {capacity}%",
-    "format-charging-critical": "<span color='#202020' bgcolor='#cc241d' > 󰢜 </span> {capacity}%",
-    "format-plugged": "<span color='#202020' bgcolor='#689d6a' > 󰂅 </span> {capacity}%",
-    "format-alt": "<span color='#202020' bgcolor='#689d6a' > 󱧥 </span> {time}",
+    "format": "<span color='#202020' bgcolor='#689d6a'> {icon} </span> {capacity}%",
+    "format-critical": "<span color='#202020' bgcolor='#cc241d'> {icon} </span> {capacity}%!!",
+    "format-warning": "<span color='#202020' bgcolor='#e78a4e'> {icon} </span> {capacity}%",
+    "format-full": "<span color='#202020' bgcolor='#689d6a'> {icon} </span> {capacity}%",
+    "format-charging": "<span color='#202020' bgcolor='#689d6a'> 󰂅 </span> {capacity}%",
+    "format-charging-warning": "<span color='#202020' bgcolor='#e78a4e'> 󰢝 </span> {capacity}%",
+    "format-charging-critical": "<span color='#202020' bgcolor='#cc241d'> 󰢜 </span> {capacity}%",
+    "format-plugged": "<span color='#202020' bgcolor='#689d6a'> 󰂅 </span> {capacity}%",
+    "format-alt": "<span color='#202020' bgcolor='#689d6a'> 󱧥 </span> {time}",
     "tooltip": false
   },
-  "network": {
-    "interval": 2,
-    "format": "<span color='#202020' bgcolor='#d3869b'> 󱘖 </span> {bandwidthDownBits}",
-    "format-wifi": "<span color='#202020' bgcolor='#d3869b'> {icon} </span> {bandwidthDownBits}",
-    "format-ethernet": "<span color='#202020' bgcolor='#d3869b'> 󰈀 </span> {bandwidthDownBits}",
-    "format-icons": [
-      "󰤫",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
-    "tooltip": false,
-    "states": {
-      "normal": 25
-    }
-  },
+
   "clock": {
-    // "timezone": "America/New_York",
-    "format": "<span color='#202020' bgcolor='#8ec07c' >  </span> {:%a %d | %H:%M}",
+    "format": "<span color='#202020' bgcolor='#8ec07c'>  </span> {:%a %d | %H:%M}",
     "tooltip": false,
     "interval": 1
   }
